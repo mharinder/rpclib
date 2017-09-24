@@ -163,7 +163,11 @@ target_include_directories(
   PRIVATE ${RPCLIB_DEPENDENCIES}/include
   )
 
-install(TARGETS ${PROJECT_NAME} DESTINATION lib EXPORT rpclibTargets)
+install(TARGETS ${PROJECT_NAME}
+  EXPORT rpclibTargets
+  RUNTIME DESTINATION bin
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib)
 install(DIRECTORY include/
   DESTINATION include
   FILES_MATCHING
